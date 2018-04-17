@@ -10,25 +10,30 @@ namespace LEDCubeFileGenerator.Common.Services
 {
     public class Converter: IConverter
     {
-        public void ConvertToTxt(IList<PointModel> cube)
+        public string ConvertToTxt(CubeModel cube)
         {
-            
-        }
+            var strBuild = new StringBuilder();
 
-        private byte[] ConvertToBytes(string source)
-        {
-            return System.Text.Encoding.UTF8.GetBytes(source);
-        }
-
-        private string ListToString(IList<PointModel> cube)
-        {
-            var strBuild = new StringBuilder(cube[0].ToString());
-            for (var i = 1; i < cube.Count; ++i)
+            for (var i = 0; i < cube.CubeSize; ++i)
             {
-                strBuild.AppendLine(cube[i].ToString());
+                var layer = cube.Points.Where(item => item.Z == i).Select(item => item.ToString());
+
+                strBuild.AppendLine(this.IEnumToString(layer));
             }
 
             return strBuild.ToString();
+        }
+
+        private string IEnumToString(IEnumerable<string> source)
+        {
+            var stringBuilder = new StringBuilder();
+
+            foreach (var item in source)
+            {
+                stringBuilder.Append(item);
+            }
+
+            return stringBuilder.ToString();
         }
     }
 }
