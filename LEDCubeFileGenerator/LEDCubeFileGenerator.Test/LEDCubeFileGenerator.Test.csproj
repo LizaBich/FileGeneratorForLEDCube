@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConverterTest.cs" />
+    <Compile Include="CubeServiceTest.cs" />
     <Compile Include="FileCreatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

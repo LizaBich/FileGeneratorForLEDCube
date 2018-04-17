@@ -41,5 +41,15 @@ namespace LEDCubeFileGenerator.Common.Models
         {
             return $"[{this.Z},{this.XY}]";
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is PointModel && this.Equals((PointModel) obj);
+        }
+
+        private bool Equals(PointModel point)
+        {
+            return this.XY == point.XY && this.Z == point.Z;
+        }
     }
 }
