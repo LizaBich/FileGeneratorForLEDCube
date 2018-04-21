@@ -46,9 +46,9 @@ namespace LEDCubeFileGenerator.Test
         [Test]
         public void Converter_ConvertToTxt_HowItWorks()
         {
-            var result = this._converter.ConvertToTxt(this._cubeModel);
+            var result = this._converter.ConvertToTxt(this._cubeModel, "All");
 
-            var pattern = "[0,0][0,1]\r\n[1,0][1,1]\r\n";
+            var pattern = "All\r\n[0,0][0,1]\r\n[1,0][1,1]\r\n";
 
             Assert.AreEqual(pattern, result);
         }

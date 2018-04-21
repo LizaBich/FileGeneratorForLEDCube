@@ -10,11 +10,24 @@ namespace LEDCubeFileGenerator.Test
     public class CubeServiceTest
     {
         private ICubeService _cubeService;
+        private IConverter _converter;
+        private IFileCreator _creator;
 
         [SetUp]
         public void Initialize()
         {
-            this._cubeService = new CubeService(2);
+            this._converter = new Converter();
+            this._creator = new FileCreator();
+            this._cubeService = new CubeService(2, this._converter, this._creator);
+        }
+
+        [Test]
+        public void CubeService_ConvertToFile_HowItWorks()
+        {
+            this._cubeService.AddHorizontalLayer(0);
+            this._cubeService.AddPoint(1, 1);
+            this._cubeService.AddPoint(2, 1);
+            this._cubeService.ConvertToFile("C:\\Users\\Lizaveta Bich\\Desktop\\ledcube.txt", "All");
         }
 
         [Test]

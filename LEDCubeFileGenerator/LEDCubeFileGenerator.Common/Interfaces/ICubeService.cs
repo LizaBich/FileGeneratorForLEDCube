@@ -21,6 +21,6 @@ namespace LEDCubeFileGenerator.Common.Interfaces
 
         void AddColumn(sbyte startPoint);
 
-        //void ConvertToFile();
+        bool ConvertToFile(string filePath, string mode);
     }
 }

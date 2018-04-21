@@ -10,9 +10,9 @@ namespace LEDCubeFileGenerator.Common.Services
 {
     public class Converter: IConverter
     {
-        public string ConvertToTxt(CubeModel cube)
+        public string ConvertToTxt(CubeModel cube, string mode)
         {
-            var strBuild = new StringBuilder();
+            var strBuild = (new StringBuilder(mode)).AppendLine();
 
             for (var i = 0; i < cube.CubeSize; ++i)
             {

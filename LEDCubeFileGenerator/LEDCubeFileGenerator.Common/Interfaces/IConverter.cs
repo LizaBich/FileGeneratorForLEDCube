@@ -9,6 +9,6 @@ namespace LEDCubeFileGenerator.Common.Interfaces
 {
     public interface IConverter
     {
-        string ConvertToTxt(CubeModel cube);
+        string ConvertToTxt(CubeModel cube, string mode);
     }
 }

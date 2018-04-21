@@ -26,9 +26,9 @@ namespace LEDCubeFileGenerator.Test
         [Test]
         public void FileCreator_Save_HowItWorks()
         {
-            this._fileCreator.Save("Hello!", "F:\\ARDUINO.TXT");
+            this._fileCreator.Save("Hello!", "C:\\Users\\Lizaveta Bich\\Desktop\\ARDUINO.TXT");
 
-            var result = File.Exists("F://ARDUINO.TXT");
+            var result = File.Exists("C:\\Users\\Lizaveta Bich\\Desktop\\ARDUINO.TXT");
 
             Assert.AreEqual(true, result);
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using LEDCubeFileGenerator.Common.Interfaces;
 using LEDCubeFileGenerator.Common.Models;
 
@@ -8,9 +9,15 @@ namespace LEDCubeFileGenerator.Common.Services
     {
         private readonly CubeModel _cubeModel;
 
-        public CubeService(sbyte cubeSize)
+        private readonly IConverter _converter;
+
+        private readonly IFileCreator _fileCreator;
+
+        public CubeService(sbyte cubeSize, IConverter converter, IFileCreator fileCreator)
         {
             this._cubeModel = new CubeModel(cubeSize);
+            this._converter = converter;
+            this._fileCreator = fileCreator;
         }
 
         public CubeModel Cube => this._cubeModel;
@@ -82,6 +89,15 @@ namespace LEDCubeFileGenerator.Common.Services
             {
                 this.AddPoint(startPoint, i);
             }
+        }
+
+        public bool ConvertToFile(string filePath, string mode)
+        {
+            var content = this._converter.ConvertToTxt(this.Cube, mode);
+
+            this._fileCreator.Save(content, filePath);
+
+            return File.Exists(filePath);
         }
     }
 }
