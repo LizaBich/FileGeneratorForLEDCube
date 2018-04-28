@@ -17,100 +17,104 @@
 
         <Style TargetType="Ellipse">
             <Style.Setters>
-                <Setter Property="Width" Value="10"/>
-                <Setter Property="Height" Value="10"/>
-                <Setter Property="StrokeThickness" Value="0"/>
+                <Setter Property="Fill" Value="LightGray"/>
+                <Setter Property="Stroke" Value="Black"/>
+                <Setter Property="StrokeThickness" Value="2"></Setter>
+                <Setter Property="Width" Value="20"/>
+                <Setter Property="Height" Value="20"/>
             </Style.Setters>
         </Style>
     </UserControl.Resources>
 
-    <Grid>
-        <!--Решётка слоя-->
-        <Polyline Points="40, 40, 320, 40, 320, 320, 40, 320, 40, 40"/>
-        <Line X1="80" Y1="40" X2="80" Y2="320" />
-        <Line X1="120" Y1="40" X2="120" Y2="320" />
-        <Line X1="160" Y1="40" X2="160" Y2="320" />
-        <Line X1="200" Y1="40" X2="200" Y2="320" />
-        <Line X1="240" Y1="40" X2="240" Y2="320" />
-        <Line X1="280" Y1="40" X2="280" Y2="320" />
-        <Line X1="40" Y1="80" X2="320" Y2="80" />
-        <Line X1="40" Y1="120" X2="320" Y2="120" />
-        <Line X1="40" Y1="160" X2="320" Y2="160" />
-        <Line X1="40" Y1="200" X2="320" Y2="200" />
-        <Line X1="40" Y1="240" X2="320" Y2="240" />
-        <Line X1="40" Y1="280" X2="320" Y2="280" />
-        
-        <!--Точки-->
-        <Ellipse Name="Point0" Margin="35,35,315,315" MouseLeftButtonDown="Point0_Selected"/>
-        <Ellipse Name="Point8" Margin="35,75,315,275" MouseLeftButtonDown="Point8_Selected"/>
-        <Ellipse Name="Point16" Margin="35,115,315,235" MouseLeftButtonDown="Point16_Selected"/>
-        <Ellipse Name="Point24" Margin="35,155,315,195" MouseLeftButtonDown="Point24_Selected"/>
-        <Ellipse Name="Point32" Margin="35,195,315,155" MouseLeftButtonDown="Point32_Selected"/>
-        <Ellipse Name="Point40" Margin="35,235,315,115" MouseLeftButtonDown="Point40_Selected"/>
-        <Ellipse Name="Point48" Margin="35,275,315,75" MouseLeftButtonDown="Point48_Selected"/>
-        <Ellipse Name="Point56" Margin="35,315,315,35" MouseLeftButtonDown="Point56_Selected"/>
+    <Border BorderBrush="DarkGray" BorderThickness="1">
+        <Grid>
+            <!--Решётка слоя-->
+            <Polyline Points="40, 40, 320, 40, 320, 320, 40, 320, 40, 40"/>
+            <Line X1="80" Y1="40" X2="80" Y2="320" />
+            <Line X1="120" Y1="40" X2="120" Y2="320" />
+            <Line X1="160" Y1="40" X2="160" Y2="320" />
+            <Line X1="200" Y1="40" X2="200" Y2="320" />
+            <Line X1="240" Y1="40" X2="240" Y2="320" />
+            <Line X1="280" Y1="40" X2="280" Y2="320" />
+            <Line X1="40" Y1="80" X2="320" Y2="80" />
+            <Line X1="40" Y1="120" X2="320" Y2="120" />
+            <Line X1="40" Y1="160" X2="320" Y2="160" />
+            <Line X1="40" Y1="200" X2="320" Y2="200" />
+            <Line X1="40" Y1="240" X2="320" Y2="240" />
+            <Line X1="40" Y1="280" X2="320" Y2="280" />
 
-        <Ellipse Name="Point1" Margin="75,35,275,315" MouseLeftButtonDown="Point1_Selected"/>
-        <Ellipse Name="Point9" Margin="75,75,275,275" MouseLeftButtonDown="Point9_Selected"/>
-        <Ellipse Name="Point17" Margin="75,115,275,235" MouseLeftButtonDown="Point17_Selected"/>
-        <Ellipse Name="Point25" Margin="75,155,275,195" MouseLeftButtonDown="Point25_Selected"/>
-        <Ellipse Name="Point33" Margin="75,195,275,155" MouseLeftButtonDown="Point33_Selected"/>
-        <Ellipse Name="Point41" Margin="75,235,275,115" MouseLeftButtonDown="Point41_Selected"/>
-        <Ellipse Name="Point49" Margin="75,275,275,75" MouseLeftButtonDown="Point49_Selected"/>
-        <Ellipse Name="Point57" Margin="75,315,275,35" MouseLeftButtonDown="Point57_Selected"/>
+            <!--Точки-->
+            <Ellipse Name="Point0" Margin="30,30,308,308" MouseLeftButtonDown="Point0_Selected"/>
+            <Ellipse Name="Point8" Margin="30,70,308,268" MouseLeftButtonDown="Point8_Selected"/>
+            <Ellipse Name="Point16" Margin="30,110,308,228" MouseLeftButtonDown="Point16_Selected"/>
+            <Ellipse Name="Point24" Margin="30,150,308,188" MouseLeftButtonDown="Point24_Selected"/>
+            <Ellipse Name="Point32" Margin="30,190,308,148" MouseLeftButtonDown="Point32_Selected"/>
+            <Ellipse Name="Point40" Margin="30,230,308,108" MouseLeftButtonDown="Point40_Selected"/>
+            <Ellipse Name="Point48" Margin="30,270,308,68" MouseLeftButtonDown="Point48_Selected"/>
+            <Ellipse Name="Point56" Margin="30,310,308,28" MouseLeftButtonDown="Point56_Selected"/>
 
-        <Ellipse Name="Point2" Margin="115,35,235,315" MouseLeftButtonDown="Point2_Selected"/>
-        <Ellipse Name="Point10" Margin="115,75,235,275" MouseLeftButtonDown="Point10_Selected"/>
-        <Ellipse Name="Point18" Margin="115,115,235,235" MouseLeftButtonDown="Point18_Selected"/>
-        <Ellipse Name="Point26" Margin="115,155,235,195" MouseLeftButtonDown="Point26_Selected"/>
-        <Ellipse Name="Point34" Margin="115,195,235,155" MouseLeftButtonDown="Point34_Selected"/>
-        <Ellipse Name="Point42" Margin="115,235,235,115" MouseLeftButtonDown="Point42_Selected"/>
-        <Ellipse Name="Point50" Margin="115,275,235,75" MouseLeftButtonDown="Point50_Selected"/>
-        <Ellipse Name="Point58" Margin="115,315,235,35" MouseLeftButtonDown="Point58_Selected"/>
+            <Ellipse Name="Point1" Margin="70,30,268,308" MouseLeftButtonDown="Point1_Selected"/>
+            <Ellipse Name="Point9" Margin="70,70,268,268" MouseLeftButtonDown="Point9_Selected"/>
+            <Ellipse Name="Point17" Margin="70,110,268,228" MouseLeftButtonDown="Point17_Selected"/>
+            <Ellipse Name="Point25" Margin="70,150,268,188" MouseLeftButtonDown="Point25_Selected"/>
+            <Ellipse Name="Point33" Margin="70,190,268,148" MouseLeftButtonDown="Point33_Selected"/>
+            <Ellipse Name="Point41" Margin="70,230,268,108" MouseLeftButtonDown="Point41_Selected"/>
+            <Ellipse Name="Point49" Margin="70,270,268,68" MouseLeftButtonDown="Point49_Selected"/>
+            <Ellipse Name="Point57" Margin="70,310,268,28" MouseLeftButtonDown="Point57_Selected"/>
 
-        <Ellipse Name="Point3" Margin="155,35,195,315" MouseLeftButtonDown="Point3_Selected"/>
-        <Ellipse Name="Point11" Margin="155,75,195,275" MouseLeftButtonDown="Point11_Selected"/>
-        <Ellipse Name="Point19" Margin="155,115,195,235" MouseLeftButtonDown="Point19_Selected"/>
-        <Ellipse Name="Point27" Margin="155,155,195,195" MouseLeftButtonDown="Point27_Selected"/>
-        <Ellipse Name="Point35" Margin="155,195,195,155" MouseLeftButtonDown="Point35_Selected"/>
-        <Ellipse Name="Point43" Margin="155,235,195,115" MouseLeftButtonDown="Point43_Selected"/>
-        <Ellipse Name="Point51" Margin="155,275,195,75" MouseLeftButtonDown="Point51_Selected"/>
-        <Ellipse Name="Point59" Margin="155,315,195,35" MouseLeftButtonDown="Point59_Selected"/>
+            <Ellipse Name="Point2" Margin="110,30,228,308" MouseLeftButtonDown="Point2_Selected"/>
+            <Ellipse Name="Point10" Margin="110,70,228,268" MouseLeftButtonDown="Point10_Selected"/>
+            <Ellipse Name="Point18" Margin="110,110,228,228" MouseLeftButtonDown="Point18_Selected"/>
+            <Ellipse Name="Point26" Margin="110,150,228,188" MouseLeftButtonDown="Point26_Selected"/>
+            <Ellipse Name="Point34" Margin="110,190,228,148" MouseLeftButtonDown="Point34_Selected"/>
+            <Ellipse Name="Point42" Margin="110,230,228,108" MouseLeftButtonDown="Point42_Selected"/>
+            <Ellipse Name="Point50" Margin="110,270,228,68" MouseLeftButtonDown="Point50_Selected"/>
+            <Ellipse Name="Point58" Margin="110,310,228,28" MouseLeftButtonDown="Point58_Selected"/>
 
-        <Ellipse Name="Point4" Margin="195,35,155,315" MouseLeftButtonDown="Point4_Selected"/>
-        <Ellipse Name="Point12" Margin="195,75,155,275" MouseLeftButtonDown="Point12_Selected"/>
-        <Ellipse Name="Point20" Margin="195,115,155,235" MouseLeftButtonDown="Point20_Selected"/>
-        <Ellipse Name="Point28" Margin="195,155,155,195" MouseLeftButtonDown="Point28_Selected"/>
-        <Ellipse Name="Point36" Margin="195,195,155,155" MouseLeftButtonDown="Point36_Selected"/>
-        <Ellipse Name="Point44" Margin="195,235,155,115" MouseLeftButtonDown="Point44_Selected"/>
-        <Ellipse Name="Point52" Margin="195,275,155,75" MouseLeftButtonDown="Point52_Selected"/>
-        <Ellipse Name="Point60" Margin="195,315,155,35" MouseLeftButtonDown="Point60_Selected"/>
+            <Ellipse Name="Point3" Margin="150,30,188,308" MouseLeftButtonDown="Point3_Selected"/>
+            <Ellipse Name="Point11" Margin="150,70,188,268" MouseLeftButtonDown="Point11_Selected"/>
+            <Ellipse Name="Point19" Margin="150,110,188,228" MouseLeftButtonDown="Point19_Selected"/>
+            <Ellipse Name="Point27" Margin="150,150,188,188" MouseLeftButtonDown="Point27_Selected"/>
+            <Ellipse Name="Point35" Margin="150,190,188,148" MouseLeftButtonDown="Point35_Selected"/>
+            <Ellipse Name="Point43" Margin="150,230,188,108" MouseLeftButtonDown="Point43_Selected"/>
+            <Ellipse Name="Point51" Margin="150,270,188,68" MouseLeftButtonDown="Point51_Selected"/>
+            <Ellipse Name="Point59" Margin="150,310,188,28" MouseLeftButtonDown="Point59_Selected"/>
 
-        <Ellipse Name="Point5" Margin="235,35,115,315" MouseLeftButtonDown="Point5_Selected"/>
-        <Ellipse Name="Point13" Margin="235,75,115,275" MouseLeftButtonDown="Point13_Selected"/>
-        <Ellipse Name="Point21" Margin="235,115,115,235" MouseLeftButtonDown="Point21_Selected"/>
-        <Ellipse Name="Point29" Margin="235,155,115,195" MouseLeftButtonDown="Point29_Selected"/>
-        <Ellipse Name="Point37" Margin="235,195,115,155" MouseLeftButtonDown="Point37_Selected"/>
-        <Ellipse Name="Point45" Margin="235,235,115,115" MouseLeftButtonDown="Point45_Selected"/>
-        <Ellipse Name="Point53" Margin="235,275,115,75" MouseLeftButtonDown="Point53_Selected"/>
-        <Ellipse Name="Point61" Margin="235,315,115,35" MouseLeftButtonDown="Point61_Selected"/>
+            <Ellipse Name="Point4" Margin="190,30,148,308" MouseLeftButtonDown="Point4_Selected"/>
+            <Ellipse Name="Point12" Margin="190,70,148,268" MouseLeftButtonDown="Point12_Selected"/>
+            <Ellipse Name="Point20" Margin="190,110,148,228" MouseLeftButtonDown="Point20_Selected"/>
+            <Ellipse Name="Point28" Margin="190,150,148,188" MouseLeftButtonDown="Point28_Selected"/>
+            <Ellipse Name="Point36" Margin="190,190,148,148" MouseLeftButtonDown="Point36_Selected"/>
+            <Ellipse Name="Point44" Margin="190,230,148,108" MouseLeftButtonDown="Point44_Selected"/>
+            <Ellipse Name="Point52" Margin="190,270,148,68" MouseLeftButtonDown="Point52_Selected"/>
+            <Ellipse Name="Point60" Margin="190,310,148,28" MouseLeftButtonDown="Point60_Selected"/>
 
-        <Ellipse Name="Point6" Margin="275,35,75,315" MouseLeftButtonDown="Point6_Selected"/>
-        <Ellipse Name="Point14" Margin="275,75,75,275" MouseLeftButtonDown="Point14_Selected"/>
-        <Ellipse Name="Point22" Margin="275,115,75,235" MouseLeftButtonDown="Point22_Selected"/>
-        <Ellipse Name="Point30" Margin="275,155,75,195" MouseLeftButtonDown="Point30_Selected"/>
-        <Ellipse Name="Point38" Margin="275,195,75,155" MouseLeftButtonDown="Point38_Selected"/>
-        <Ellipse Name="Point46" Margin="275,235,75,115" MouseLeftButtonDown="Point46_Selected" />
-        <Ellipse Name="Point54" Margin="275,275,75,75" MouseLeftButtonDown="Point54_Selected"/>
-        <Ellipse Name="Point62" Margin="275,315,75,35" MouseLeftButtonDown="Point62_Selected"/>
+            <Ellipse Name="Point5" Margin="230,30,108,308" MouseLeftButtonDown="Point5_Selected"/>
+            <Ellipse Name="Point13" Margin="230,70,108,268" MouseLeftButtonDown="Point13_Selected"/>
+            <Ellipse Name="Point21" Margin="230,110,108,228" MouseLeftButtonDown="Point21_Selected"/>
+            <Ellipse Name="Point29" Margin="230,150,108,188" MouseLeftButtonDown="Point29_Selected"/>
+            <Ellipse Name="Point37" Margin="230,190,108,148" MouseLeftButtonDown="Point37_Selected"/>
+            <Ellipse Name="Point45" Margin="230,230,108,108" MouseLeftButtonDown="Point45_Selected"/>
+            <Ellipse Name="Point53" Margin="230,270,108,68" MouseLeftButtonDown="Point53_Selected"/>
+            <Ellipse Name="Point61" Margin="230,310,108,28" MouseLeftButtonDown="Point61_Selected"/>
 
-        <Ellipse Name="Point7" Margin="315,35,35,315" MouseLeftButtonDown="Point7_Selected"/>
-        <Ellipse Name="Point15" Margin="315,75,35,275" MouseLeftButtonDown="Point15_Selected"/>
-        <Ellipse Name="Point23" Margin="315,115,35,235" MouseLeftButtonDown="Point23_Selected"/>
-        <Ellipse Name="Point31" Margin="315,155,35,195" MouseLeftButtonDown="Point31_Selected"/>
-        <Ellipse Name="Point39" Margin="315,195,35,155" MouseLeftButtonDown="Point39_Selected"/>
-        <Ellipse Name="Point47" Margin="315,235,35,115" MouseLeftButtonDown="Point47_Selected"/>
-        <Ellipse Name="Point55" Margin="315,275,35,75" MouseLeftButtonDown="Point55_Selected"/>
-        <Ellipse Name="Point63" Margin="315,315,35,35" MouseLeftButtonDown="Point63_Selected"/>
-    </Grid>
+            <Ellipse Name="Point6" Margin="270,30,68,308" MouseLeftButtonDown="Point6_Selected"/>
+            <Ellipse Name="Point14" Margin="270,70,68,268" MouseLeftButtonDown="Point14_Selected"/>
+            <Ellipse Name="Point22" Margin="270,110,68,228" MouseLeftButtonDown="Point22_Selected"/>
+            <Ellipse Name="Point30" Margin="270,150,68,188" MouseLeftButtonDown="Point30_Selected"/>
+            <Ellipse Name="Point38" Margin="270,190,68,148" MouseLeftButtonDown="Point38_Selected"/>
+            <Ellipse Name="Point46" Margin="270,230,68,108" MouseLeftButtonDown="Point46_Selected" />
+            <Ellipse Name="Point54" Margin="270,270,68,68" MouseLeftButtonDown="Point54_Selected"/>
+            <Ellipse Name="Point62" Margin="270,310,68,28" MouseLeftButtonDown="Point62_Selected"/>
+
+            <Ellipse Name="Point7" Margin="310,30,28,308" MouseLeftButtonDown="Point7_Selected"/>
+            <Ellipse Name="Point15" Margin="310,70,28,268" MouseLeftButtonDown="Point15_Selected"/>
+            <Ellipse Name="Point23" Margin="310,110,28,228" MouseLeftButtonDown="Point23_Selected"/>
+            <Ellipse Name="Point31" Margin="310,150,28,188" MouseLeftButtonDown="Point31_Selected"/>
+            <Ellipse Name="Point39" Margin="310,190,28,148" MouseLeftButtonDown="Point39_Selected"/>
+            <Ellipse Name="Point47" Margin="310,230,28,108" MouseLeftButtonDown="Point47_Selected"/>
+            <Ellipse Name="Point55" Margin="310,270,28,68" MouseLeftButtonDown="Point55_Selected"/>
+            <Ellipse Name="Point63" Margin="310,310,28,28" MouseLeftButtonDown="Point63_Selected"/>
+        </Grid>
+    </Border>
 </UserControl>

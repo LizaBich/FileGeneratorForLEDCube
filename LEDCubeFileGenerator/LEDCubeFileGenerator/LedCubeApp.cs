@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LEDCubeFileGenerator
@@ -103,28 +98,28 @@ namespace LEDCubeFileGenerator
             switch (this.layersList.Text)
             {
                 case "Layer 0":
-                    this.cubeView.Recover(this._selectedPoints[0]);
+                    this.cubeView.Recover(this._selectedPoints[0].Select(item => item).ToList());
                     break;
                 case "Layer 1":
-                    this.cubeView.Recover(this._selectedPoints[1]);
+                    this.cubeView.Recover(this._selectedPoints[1].Select(item => item).ToList());
                     break;
                 case "Layer 2":
-                    this.cubeView.Recover(this._selectedPoints[2]);
+                    this.cubeView.Recover(this._selectedPoints[2].Select(item => item).ToList());
                     break;
                 case "Layer 3":
-                    this.cubeView.Recover(this._selectedPoints[3]);
+                    this.cubeView.Recover(this._selectedPoints[3].Select(item => item).ToList());
                     break;
                 case "Layer 4":
-                    this.cubeView.Recover(this._selectedPoints[4]);
+                    this.cubeView.Recover(this._selectedPoints[4].Select(item => item).ToList());
                     break;
                 case "Layer 5":
-                    this.cubeView.Recover(this._selectedPoints[5]);
+                    this.cubeView.Recover(this._selectedPoints[5].Select(item => item).ToList());
                     break;
                 case "Layer 6":
-                    this.cubeView.Recover(this._selectedPoints[6]);
+                    this.cubeView.Recover(this._selectedPoints[6].Select(item => item).ToList());
                     break;
                 case "Layer 7":
-                    this.cubeView.Recover(this._selectedPoints[7]);
+                    this.cubeView.Recover(this._selectedPoints[7].Select(item => item).ToList());
                     break;
                 default:
                     this.ShowMessage("You have to choose layer!");
@@ -137,28 +132,28 @@ namespace LEDCubeFileGenerator
             switch (this.layersList.Text)
             {
                 case "Layer 0":
-                    this._selectedPoints[0][point] = !this._selectedPoints[0][point];
+                    this._selectedPoints[0] = this.cubeView.IsSelected.Select(item => item).ToList();
                     break;
                 case "Layer 1":
-                    this._selectedPoints[1][point] = !this._selectedPoints[1][point];
+                    this._selectedPoints[1] = this.cubeView.IsSelected.Select(item => item).ToList();
                     break;
                 case "Layer 2":
-                    this._selectedPoints[2][point] = !this._selectedPoints[2][point];
+                    this._selectedPoints[2] = this.cubeView.IsSelected.Select(item => item).ToList();
                     break;
                 case "Layer 3":
-                    this._selectedPoints[3][point] = !this._selectedPoints[3][point];
+                    this._selectedPoints[3] = this.cubeView.IsSelected.Select(item => item).ToList();
                     break;
                 case "Layer 4":
-                    this._selectedPoints[4][point] = !this._selectedPoints[4][point];
+                    this._selectedPoints[4] = this.cubeView.IsSelected.Select(item => item).ToList();
                     break;
                 case "Layer 5":
-                    this._selectedPoints[5][point] = !this._selectedPoints[5][point];
+                    this._selectedPoints[5] = this.cubeView.IsSelected.Select(item => item).ToList();
                     break;
                 case "Layer 6":
-                    this._selectedPoints[6][point] = !this._selectedPoints[6][point];
+                    this._selectedPoints[6] = this.cubeView.IsSelected.Select(item => item).ToList();
                     break;
                 case "Layer 7":
-                    this._selectedPoints[7][point] = !this._selectedPoints[7][point];
+                    this._selectedPoints[7] = this.cubeView.IsSelected.Select(item => item).ToList();
                     break;
                 default:
                     this.ShowMessage("You have to choose layer!");

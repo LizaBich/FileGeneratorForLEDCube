@@ -31,6 +31,7 @@
             this.CubeViewHost = new System.Windows.Forms.Integration.ElementHost();
             this.cubeView = new LEDCubeFileGenerator.CubeView();
             this.layersList = new System.Windows.Forms.ComboBox();
+            this.clearLayerButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CubeViewHost
@@ -48,6 +49,8 @@
             // 
             // layersList
             // 
+            this.layersList.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.layersList.Font = new System.Drawing.Font("Lucida Bright", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layersList.FormattingEnabled = true;
             this.layersList.Items.AddRange(new object[] {
             "Layer 0",
@@ -58,16 +61,27 @@
             "Layer 5",
             "Layer 6",
             "Layer 7"});
-            this.layersList.Location = new System.Drawing.Point(379, 13);
+            this.layersList.Location = new System.Drawing.Point(378, 13);
             this.layersList.Name = "layersList";
-            this.layersList.Size = new System.Drawing.Size(131, 21);
+            this.layersList.Size = new System.Drawing.Size(145, 25);
             this.layersList.TabIndex = 1;
+            // 
+            // clearLayerButton
+            // 
+            this.clearLayerButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.clearLayerButton.Location = new System.Drawing.Point(378, 44);
+            this.clearLayerButton.Name = "clearLayerButton";
+            this.clearLayerButton.Size = new System.Drawing.Size(145, 25);
+            this.clearLayerButton.TabIndex = 2;
+            this.clearLayerButton.Text = "Clear current layer";
+            this.clearLayerButton.UseVisualStyleBackColor = true;
             // 
             // LedCubeApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 382);
+            this.ClientSize = new System.Drawing.Size(722, 382);
+            this.Controls.Add(this.clearLayerButton);
             this.Controls.Add(this.layersList);
             this.Controls.Add(this.CubeViewHost);
             this.MinimumSize = new System.Drawing.Size(738, 421);
@@ -82,6 +96,7 @@
         private System.Windows.Forms.Integration.ElementHost CubeViewHost;
         private CubeView cubeView;
         private System.Windows.Forms.ComboBox layersList;
+        private System.Windows.Forms.Button clearLayerButton;
     }
 }
 
