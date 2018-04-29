@@ -17,10 +17,6 @@ namespace LEDCubeFileGenerator.Common.Interfaces
 
         void AddHorizontalLayer(sbyte layerPosition);
 
-        void AddVerticalLayer(bool isX, sbyte startPosition);
-
-        void AddColumn(sbyte startPoint);
-
         bool ConvertToFile(string filePath, string mode);
     }
 }

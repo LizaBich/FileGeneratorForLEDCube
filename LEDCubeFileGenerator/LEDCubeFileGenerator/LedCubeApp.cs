@@ -2,16 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using LEDCubeFileGenerator.Common.Interfaces;
 
 namespace LEDCubeFileGenerator
 {
     public partial class LedCubeApp : Form
     {
+        private const string FinishMessage = "Done";
+
+        private const string InProgressMessage = "In progress";
+
+        private const string FileName = "LED_ARDUINO.TXT";
+
+        private const string WarningMessage = "You have to choose layer!";
+
+        private readonly ICubeService _cubeService;
+
         private readonly IList<IList<bool>> _selectedPoints;
 
-        public LedCubeApp()
+        public LedCubeApp(ICubeService service)
         {
             this.InitializeComponent();
+
+            this._cubeService = service;
 
             this._selectedPoints = new List<IList<bool>>
             {
@@ -91,6 +104,11 @@ namespace LEDCubeFileGenerator
 
             this.cubeView.PointSelected += this.AddPoint;
             this.layersList.TextChanged += this.LayersList_TextChanged;
+
+            this.progress.Value = 0;
+            this.finishLabel.Text = string.Empty;
+
+            this.layersList.Text = @"Layer 0";
         }
 
         private void LayersList_TextChanged(object sender, EventArgs e)
@@ -98,31 +116,32 @@ namespace LEDCubeFileGenerator
             switch (this.layersList.Text)
             {
                 case "Layer 0":
-                    this.cubeView.Recover(this._selectedPoints[0].Select(item => item).ToList());
+                    this.TextChangedExtension(0);
                     break;
                 case "Layer 1":
-                    this.cubeView.Recover(this._selectedPoints[1].Select(item => item).ToList());
+                    this.TextChangedExtension(1);
                     break;
                 case "Layer 2":
-                    this.cubeView.Recover(this._selectedPoints[2].Select(item => item).ToList());
+                    this.TextChangedExtension(2);
                     break;
                 case "Layer 3":
-                    this.cubeView.Recover(this._selectedPoints[3].Select(item => item).ToList());
+                    this.TextChangedExtension(3);
                     break;
                 case "Layer 4":
-                    this.cubeView.Recover(this._selectedPoints[4].Select(item => item).ToList());
+                    this.TextChangedExtension(4);
                     break;
                 case "Layer 5":
-                    this.cubeView.Recover(this._selectedPoints[5].Select(item => item).ToList());
+                    this.TextChangedExtension(5);
                     break;
                 case "Layer 6":
-                    this.cubeView.Recover(this._selectedPoints[6].Select(item => item).ToList());
+                    this.TextChangedExtension(6);
                     break;
                 case "Layer 7":
-                    this.cubeView.Recover(this._selectedPoints[7].Select(item => item).ToList());
+                    this.TextChangedExtension(7);
                     break;
                 default:
-                    this.ShowMessage("You have to choose layer!");
+                    this.CubeViewHost.Enabled = false;
+                    this.ShowMessage(WarningMessage);
                     break;
             }
         }
@@ -132,38 +151,153 @@ namespace LEDCubeFileGenerator
             switch (this.layersList.Text)
             {
                 case "Layer 0":
-                    this._selectedPoints[0] = this.cubeView.IsSelected.Select(item => item).ToList();
+                    this.AddPointExtension(0);
                     break;
                 case "Layer 1":
-                    this._selectedPoints[1] = this.cubeView.IsSelected.Select(item => item).ToList();
+                    this.AddPointExtension(1);
                     break;
                 case "Layer 2":
-                    this._selectedPoints[2] = this.cubeView.IsSelected.Select(item => item).ToList();
+                    this.AddPointExtension(2);
                     break;
                 case "Layer 3":
-                    this._selectedPoints[3] = this.cubeView.IsSelected.Select(item => item).ToList();
+                    this.AddPointExtension(3);
                     break;
                 case "Layer 4":
-                    this._selectedPoints[4] = this.cubeView.IsSelected.Select(item => item).ToList();
+                    this.AddPointExtension(4);
                     break;
                 case "Layer 5":
-                    this._selectedPoints[5] = this.cubeView.IsSelected.Select(item => item).ToList();
+                    this.AddPointExtension(5);
                     break;
                 case "Layer 6":
-                    this._selectedPoints[6] = this.cubeView.IsSelected.Select(item => item).ToList();
+                    this.AddPointExtension(6);
                     break;
                 case "Layer 7":
-                    this._selectedPoints[7] = this.cubeView.IsSelected.Select(item => item).ToList();
+                    this.AddPointExtension(7);
                     break;
                 default:
-                    this.ShowMessage("You have to choose layer!");
+                    this.ShowMessage(WarningMessage);
                     break;
             }
         }
 
+        private void ClearLayerButton_Click(object sender, EventArgs e)
+        {
+            switch (this.layersList.Text)
+            {
+                case "Layer 0":
+                    this.ClearLayerExtension(0);
+                    break;
+                case "Layer 1":
+                    this.ClearLayerExtension(1);
+                    break;
+                case "Layer 2":
+                    this.ClearLayerExtension(2);
+                    break;
+                case "Layer 3":
+                    this.ClearLayerExtension(3);
+                    break;
+                case "Layer 4":
+                    this.ClearLayerExtension(4);
+                    break;
+                case "Layer 5":
+                    this.ClearLayerExtension(5);
+                    break;
+                case "Layer 6":
+                    this.ClearLayerExtension(6);
+                    break;
+                case "Layer 7":
+                    this.ClearLayerExtension(7);
+                    break;
+                default:
+                    this.ShowMessage(WarningMessage);
+                    break;
+            }
+        }
+
+        private void ClearLayerExtension(int position)
+        {
+            this._selectedPoints[position] = this._selectedPoints[position].Select(item => false).ToList();
+            this.cubeView.Recover(this._selectedPoints[position]);
+        }
+
+        private void AddPointExtension(int position) =>
+            this._selectedPoints[position] = this.cubeView.IsSelected.Select(item => item).ToList();
+
+        private void TextChangedExtension(int position, bool flag = true)
+        {
+            this.CubeViewHost.Enabled = flag;
+            this.cubeView.Recover(this._selectedPoints[position].Select(item => item).ToList());
+        }
+
         private void ShowMessage(string message)
         {
-            MessageBox.Show(message, @"Warning");
+            const string warnMessage = "Warning";
+            MessageBox.Show(message, warnMessage);
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            this.finishLabel.Text = InProgressMessage;
+
+            using (var folderBrowser = new FolderBrowserDialog())
+            {
+                folderBrowser.ShowNewFolderButton = true;
+                var result = folderBrowser.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    this.FillCube();
+                    var mode = $"[{this.xExpression.Text}][{this.yExpression.Text}]";
+                    this._cubeService.ConvertToFile($"{folderBrowser.SelectedPath}\\\\{FileName}", mode);
+                    this.finishLabel.Text = FinishMessage;
+                    this.progress.Value = 0;
+                }
+                else
+                {
+                    this.finishLabel.Text = string.Empty;
+                }
+            }
+        }
+
+        private void FillRow(IEnumerable<bool> layer, bool isX, bool result, sbyte startPos, sbyte position)
+        {
+            const sbyte size = 8;
+
+            if (result)
+                this._cubeService.AddRow(isX, position, startPos);
+            else
+            {
+                for (var i = startPos; i < startPos + size; ++i)
+                {
+                    if (layer.ElementAt(i)) this._cubeService.AddPoint(i, position);
+                }
+            }
+        }
+
+        private void FillCube()
+        {
+            sbyte position = 0;
+            foreach (var layer in this._selectedPoints)
+            {
+                if (layer.All(item => item))
+                {
+                    this._cubeService.AddHorizontalLayer(position);
+                }
+                else
+                {
+                    sbyte startPos = 0;
+                    while (startPos < 64)
+                    {
+                        this.FillRow(layer, true,
+                            layer.Skip(startPos).Take(8).All(item => item),
+                            startPos, position);
+
+                        startPos += 8;
+                    }
+                }
+
+                this.progress.PerformStep();
+                ++position;
+            }
         }
     }
 }
