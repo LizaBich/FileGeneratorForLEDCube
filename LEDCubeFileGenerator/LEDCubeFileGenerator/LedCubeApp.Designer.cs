@@ -37,13 +37,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.xExpression = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.progress = new System.Windows.Forms.ToolStripProgressBar();
+            this.finishLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.CubeViewHost = new System.Windows.Forms.Integration.ElementHost();
             this.cubeView = new LEDCubeFileGenerator.CubeView();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.progress = new System.Windows.Forms.ProgressBar();
-            this.finishLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // layersList
@@ -152,6 +154,43 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter the expression for X change (x = x + 1).";
             // 
+            // saveButton
+            // 
+            this.saveButton.Font = new System.Drawing.Font("Lucida Bright", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.Location = new System.Drawing.Point(556, 273);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(99, 23);
+            this.saveButton.TabIndex = 5;
+            this.saveButton.Text = "Save to file";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.progress,
+            this.finishLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 383);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip1.Size = new System.Drawing.Size(664, 22);
+            this.statusStrip1.TabIndex = 8;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // progress
+            // 
+            this.progress.Name = "progress";
+            this.progress.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.progress.Size = new System.Drawing.Size(100, 16);
+            this.progress.Step = 12;
+            this.progress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            // 
+            // finishLabel
+            // 
+            this.finishLabel.Name = "finishLabel";
+            this.finishLabel.Size = new System.Drawing.Size(0, 17);
+            // 
             // CubeViewHost
             // 
             this.CubeViewHost.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -165,45 +204,12 @@
             this.CubeViewHost.Text = "CubeViewHost";
             this.CubeViewHost.Child = this.cubeView;
             // 
-            // saveButton
-            // 
-            this.saveButton.Font = new System.Drawing.Font("Lucida Bright", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.Location = new System.Drawing.Point(476, 288);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(99, 23);
-            this.saveButton.TabIndex = 5;
-            this.saveButton.Text = "Save to file";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
-            // progress
-            // 
-            this.progress.Location = new System.Drawing.Point(382, 269);
-            this.progress.Maximum = 96;
-            this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(205, 13);
-            this.progress.Step = 12;
-            this.progress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progress.TabIndex = 6;
-            this.progress.Value = 12;
-            // 
-            // finishLabel
-            // 
-            this.finishLabel.AutoSize = true;
-            this.finishLabel.Font = new System.Drawing.Font("Lucida Bright", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.finishLabel.Location = new System.Drawing.Point(595, 269);
-            this.finishLabel.Name = "finishLabel";
-            this.finishLabel.Size = new System.Drawing.Size(40, 14);
-            this.finishLabel.TabIndex = 7;
-            this.finishLabel.Text = "label4";
-            // 
             // LedCubeApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 382);
-            this.Controls.Add(this.finishLabel);
-            this.Controls.Add(this.progress);
+            this.ClientSize = new System.Drawing.Size(664, 405);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -215,6 +221,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,8 +242,9 @@
         private System.Windows.Forms.TextBox xExpression;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.ProgressBar progress;
-        private System.Windows.Forms.Label finishLabel;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripProgressBar progress;
+        private System.Windows.Forms.ToolStripStatusLabel finishLabel;
     }
 }
 
