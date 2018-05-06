@@ -59,38 +59,6 @@ namespace LEDCubeFileGenerator.Common.Services
             }
         }
 
-        public void AddVerticalLayer(bool isX, sbyte startPosition)
-        {
-            for (sbyte i = 0; i < this._cubeModel.CubeSize; ++i)
-            {
-                if (isX)
-                {
-                    for (sbyte j = startPosition; j < this._cubeModel.CubeSize + startPosition; ++j)
-                    {
-                        this.AddPoint(j, i);
-                    }
-                }
-                else
-                {
-                    sbyte j = startPosition;
-                    while (j < startPosition + Math.Pow(this._cubeModel.CubeSize, 2) - this._cubeModel.CubeSize + 1)
-                    {
-                        this.AddPoint(j, i);
-                        j += this._cubeModel.CubeSize;
-                    }
-                }
-
-            }
-        }
-
-        public void AddColumn(sbyte startPoint)
-        {
-            for (sbyte i = 0; i < this._cubeModel.CubeSize; ++i)
-            {
-                this.AddPoint(startPoint, i);
-            }
-        }
-
         public bool ConvertToFile(string filePath, string mode)
         {
             var content = this._converter.ConvertToTxt(this.Cube, mode);

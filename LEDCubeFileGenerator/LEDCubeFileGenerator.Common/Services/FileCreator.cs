@@ -13,23 +13,14 @@ namespace LEDCubeFileGenerator.Common.Services
     {
         public async Task Save(string content, string fileName)
         {
-            var file = File.Create(fileName);
-            var streamWriter = new StreamWriter(file);
-            await streamWriter.WriteAsync(content);
-            streamWriter.Close();
-
-            //using (var folderDialog = new FolderBrowserDialog())
-            //{
-            //    folderDialog.Description = "Выбор папки для сохранения файла";
-            //    folderDialog.ShowNewFolderButton = false;
-            //    folderDialog.RootFolder = Environment.SpecialFolder.Personal;
-            //    var result = folderDialog.ShowDialog();
-
-            //    if (result == DialogResult.OK)
-            //    {
-
-            //    }
-            //}
+            using (var file = File.Create(fileName))
+            {
+                using (var streamWriter = new StreamWriter(file))
+                {
+                    await streamWriter.WriteAsync(content);
+                    streamWriter.Close();
+                }
+            }
         }
     }
 }
