@@ -103,7 +103,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Lucida Bright", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(383, 119);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(273, 143);
+            this.groupBox2.Size = new System.Drawing.Size(273, 180);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Led configuration";
@@ -112,7 +112,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Bright", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 107);
+            this.label3.Location = new System.Drawing.Point(7, 145);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(233, 28);
             this.label3.TabIndex = 4;
@@ -121,7 +121,7 @@
             // yExpression
             // 
             this.yExpression.Font = new System.Drawing.Font("Lucida Bright", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yExpression.Location = new System.Drawing.Point(8, 80);
+            this.yExpression.Location = new System.Drawing.Point(8, 114);
             this.yExpression.Name = "yExpression";
             this.yExpression.Size = new System.Drawing.Size(260, 25);
             this.yExpression.TabIndex = 3;
@@ -130,16 +130,17 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lucida Bright", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 64);
+            this.label2.Location = new System.Drawing.Point(5, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(249, 14);
+            this.label2.Size = new System.Drawing.Size(249, 28);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Enter the expression for Y change (y = y + 1).";
+            this.label2.Text = "Enter the expression for Y change (y = y + 1).\r\nPlease, use digits from 0 to 7 an" +
+    "d only + or -.";
             // 
             // xExpression
             // 
             this.xExpression.Font = new System.Drawing.Font("Lucida Bright", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xExpression.Location = new System.Drawing.Point(7, 37);
+            this.xExpression.Location = new System.Drawing.Point(7, 52);
             this.xExpression.Name = "xExpression";
             this.xExpression.Size = new System.Drawing.Size(260, 25);
             this.xExpression.TabIndex = 1;
@@ -150,14 +151,15 @@
             this.label1.Font = new System.Drawing.Font("Lucida Bright", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(4, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 14);
+            this.label1.Size = new System.Drawing.Size(255, 28);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Enter the expression for X change (x = x + 1).";
+            this.label1.Text = "Enter the expression for X change (x = x + 1).\r\nPlease, use digits from 0 to 63 a" +
+    "nd only + or -.\r\n";
             // 
             // saveButton
             // 
             this.saveButton.Font = new System.Drawing.Font("Lucida Bright", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.Location = new System.Drawing.Point(556, 273);
+            this.saveButton.Location = new System.Drawing.Point(557, 305);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(99, 23);
             this.saveButton.TabIndex = 5;

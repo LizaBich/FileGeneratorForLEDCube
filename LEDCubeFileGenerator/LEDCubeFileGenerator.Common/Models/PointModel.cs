@@ -39,7 +39,7 @@ namespace LEDCubeFileGenerator.Common.Models
 
         public override string ToString()
         {
-            return $"[{this.Z},{this.XY}]";
+            return $"[{this.XY}]";
         }
 
         public override bool Equals(object obj)
